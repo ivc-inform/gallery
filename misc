@@ -1,0 +1,14 @@
+pip3 install -r ./requirements.txt
+pip3 freeze > requirements.txt
+
+python3 manage.py createsuperuser --username=admin
+
+useradd -m -G sudo -s /bin/bash gallary
+
+lxc-create --name gallary --lxcpath=/home/ayudin/VirtualBox/lxc --template ubuntu
+lxc-attach --name gallary --lxcpath=/home/ayudin/VirtualBox/lxc
+
+python3 manage.py runserver 0:8000
+
+python3 manage.py makemigrations
+python3 manage.py migrate
