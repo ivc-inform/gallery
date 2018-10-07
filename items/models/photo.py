@@ -1,6 +1,6 @@
 import logging
 
-from django.db.models import ForeignKey, CASCADE, CharField, Model, permalink
+from django.db.models import ForeignKey, CASCADE, CharField, Model
 
 from items.fields import ThumbnailImageField
 from items.models.album import Album
@@ -22,6 +22,6 @@ class Photo(Model):
     def __str__(self):
         return self.title
 
-    @permalink
+    # @permalink
     def get_absolute_url(self):
         return ('photo_detail', None, dict(object_id=self.id))

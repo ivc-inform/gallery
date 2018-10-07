@@ -1,6 +1,6 @@
 import logging
 
-from django.db.models import Model, CharField, TextField, permalink
+from django.db.models import Model, CharField, TextField
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +18,6 @@ class Album(Model):
     def __str__(self):
         return self.name
 
-    @permalink
+    # @permalink
     def get_absolute_url(self):
         return ('item_detail', None, dict(object_id=self.id))
