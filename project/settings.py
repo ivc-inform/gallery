@@ -51,8 +51,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,7 +72,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-COMMON_HOST="10.0.3.187"
+COMMON_HOST = "10.0.3.187"
 
 DATABASES = {
     # 'default': {
@@ -161,3 +159,10 @@ LOGGING = {
     },
     'root': {'level': 'INFO'}
 }
+
+ROOT_URL = '/gallery/'
+LOGIN_URL = ROOT_URL + 'login/'
+MEDIA_URL = ROOT_URL + 'media/'
+ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
+
+ROOT_URLCONF = 'urls'
