@@ -75,31 +75,32 @@ WSGI_APPLICATION = 'project.wsgi.application'
 COMMON_HOST = "10.0.3.187"
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, '../database/project.db.sqlite3'),
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',  # Role name when using md5 authentication.
-        # Leave as an empty string when using peer or
-        # ident authencation.
-        'PASSWORD': 'postgres',  # Role password when using md5 authentication.
-        # Leave as an empty string when using peer or
-        # ident authencation.
-        'HOST': COMMON_HOST,  # When using TCP sockets specify the hostname,
-        # the ip4 address or the ip6 address here.
-        # Leave as an empty string to use Unix domain
-        # socket ("local" lines in pg_hba.conf).
-        'PORT': '5432',  # Leave to empty string when using Unix domain sockets.
-        # Specify the port number when using a TCP socket.
-        'OPTIONS': {},  # Backend specific configuration parameters.
-        'TEST': {
-            'NAME': 'test_test'  # Database name used when running the test suite.
-        },
-        'SECRET_WEBTOKEN_KEY': SECRET_KEY,
+        'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, '../database/project.db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'postgres',
+    #     'USER': 'postgres',  # Role name when using md5 authentication.
+    #     # Leave as an empty string when using peer or
+    #     # ident authencation.
+    #     'PASSWORD': 'postgres',  # Role password when using md5 authentication.
+    #     # Leave as an empty string when using peer or
+    #     # ident authencation.
+    #     'HOST': COMMON_HOST,  # When using TCP sockets specify the hostname,
+    #     # the ip4 address or the ip6 address here.
+    #     # Leave as an empty string to use Unix domain
+    #     # socket ("local" lines in pg_hba.conf).
+    #     'PORT': '5432',  # Leave to empty string when using Unix domain sockets.
+    #     # Specify the port number when using a TCP socket.
+    #     'OPTIONS': {},  # Backend specific configuration parameters.
+    #     'TEST': {
+    #         'NAME': 'test_test'  # Database name used when running the test suite.
+    #     },
+    #     'SECRET_WEBTOKEN_KEY': SECRET_KEY,
+    # },
 }
 
 # Password validation

@@ -1,6 +1,7 @@
 import logging
 
 from django.db.models import Model, CharField, TextField
+from django.urls import reverse
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,5 @@ class Album(Model):
     def __str__(self):
         return self.name
 
-    # @permalink
     def get_absolute_url(self):
-        return ('item_detail', None, dict(object_id=self.id))
+        return reverse('item_detail', kwargs=dict(object_id=self.id))
