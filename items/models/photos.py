@@ -14,6 +14,8 @@ class Photo(Model):
     title = CharField(max_length=250)
     image = ThumbnailImageField(upload_to='photos%Y%m%d%H%M%S')
 
+    caption = CharField(max_length=250, blank=True, null=True)
+
     class Meta:
         verbose_name = 'Фотография'
         verbose_name_plural = 'Фотографии'
