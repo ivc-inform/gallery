@@ -13,7 +13,7 @@ def permalink(func):
 
     @wraps(func)
     def inner(*args, **kwargs):
-        bits = func(*args, **kwargs)
-        return reverse(bits[0], None, *bits[1:3])
+        tuple = func(*args, **kwargs)
+        return reverse(tuple[0], None, *tuple[1:3])
 
     return inner

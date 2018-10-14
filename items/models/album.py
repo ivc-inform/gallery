@@ -20,6 +20,6 @@ class Album(Model):
     def __str__(self):
         return self.name
 
-    @permalink
-    def get_absolute_url(self):
-        return ('album_detail', None, dict(object_id=self.id))
+    # @permalink
+    # def get_absolute_url(self):
+    #     return ('album_detail', None, dict(object_id=self.id))

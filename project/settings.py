@@ -26,8 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, './media')
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'items'
+    'items.apps.ItemsConfig'
 ]
 
 MIDDLEWARE = [
@@ -161,3 +159,13 @@ LOGGING = {
 }
 
 ROOT_URLCONF = 'project.urls'
+
+ROOT_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+MEDIA_URL = ROOT_URL + 'media/'
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'gallery.context_processors.root_url_processor',
+    'django.core.context_processors.auth',
+]
