@@ -1,9 +1,9 @@
 import logging
 
 from django.db.models import ForeignKey, CASCADE, CharField, Model
-from django.urls import reverse
+from django.db.models.fields.files import ImageField
 
-from items.fields import ThumbnailImageField
+from items import permalink
 from items.models.album import Album
 
 logger = logging.getLogger(__name__)
@@ -11,9 +11,8 @@ logger = logging.getLogger(__name__)
 
 class Photo(Model):
     album = ForeignKey(Album, on_delete=CASCADE)
-    title = CharField(max_length=100)
-    image = ThumbnailImageField(upload_to='photos')
-    caption = CharField(max_length=250, blank=True)
+    title = CharField(max_length=250)
+    image = ImageField(upload_to='photos')
 
     class Meta:
         verbose_name = 'Фотография'
@@ -23,5 +22,6 @@ class Photo(Model):
     def __str__(self):
         return self.title
 
+    @permalink
     def get_absolute_url(self):
-        return reverse('photo_detail', kwargs=dict(object_id=self.id))
+        return ('photo_detail', None, dict(object_id=self.id))
