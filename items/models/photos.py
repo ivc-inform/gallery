@@ -20,7 +20,7 @@ class Photo(Model):
         ordering = ['title']
 
     def __str__(self):
-        return self.title
+        return f"{self.title}: {self.id}"
 
     @permalink
     def get_absolute_url(self):

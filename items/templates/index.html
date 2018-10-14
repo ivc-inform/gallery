@@ -5,10 +5,8 @@
 {% block content %}
 
     <h2>Welcome to the Gallery!</h2>
-    <p>Here you'll find pictures of various items. Below are some highlighted
-        items; use the link at the bottom to see the full listing.</p>
-
-    <h3>Showcase</h3>
+    <p>Here you'll find pictures of various items. Below are some highlighted items; use the link at the bottom to see the full listing.</p>
+    <h3>Витрина</h3>
     <table>
         <tr>
             {% for item in item_list|slice:":3" %}
@@ -24,6 +22,6 @@
             {% endfor %}
         </tr>
     </table>
-    <p><a href="{% url item_list %}">View the full list &raquo;</a></p>
+    <p><a href="{% url 'item_list' %}">View the full list &raquo;</a></p>
 
 {% endblock %}

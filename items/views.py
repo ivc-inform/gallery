@@ -6,7 +6,7 @@ from items.models.photos import Photo
 
 class IndexView(TemplateView):
     template_name = 'index.html'
-    extra_context = dict(item_list=lambda: Album.objects.all())
+    extra_context = {'item_list': lambda: Album.objects.all()}
 
 
 class AlbumListView(ListView):
@@ -17,12 +17,14 @@ class AlbumListView(ListView):
     def get_queryset(self):
         return Album.objects.all()
 
+
 class AlbumDetailView(DetailView):
     model = Album
     template_name = 'items_detail.html'
 
     def get_queryset(self):
         return Album.objects.all()
+
 
 class PhotosDetailView(DetailView):
     model = Photo

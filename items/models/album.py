@@ -18,8 +18,8 @@ class Album(Model):
         ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f"{self.name}: {self.id}"
 
     @permalink
     def get_absolute_url(self):
-        return ('album_detail', None, dict(object_id=self.id))
+        return ('item_detail', None, dict(object_id=self.id))
