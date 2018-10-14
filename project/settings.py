@@ -26,8 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# MEDIA_ROOT = '/home/gallary/media/photos'
-MEDIA_ROOT = '/home/ayudin/VirtualBox/GIT-HUB/gallary/media/photos'
+MEDIA_ROOT = os.path.join(BASE_DIR, '../media/photos')
 
 # Application definition
 
@@ -161,9 +160,4 @@ LOGGING = {
     'root': {'level': 'INFO'}
 }
 
-ROOT_URL = '/gallery/'
-LOGIN_URL = ROOT_URL + 'login/'
-MEDIA_URL = ROOT_URL + 'media/'
-ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
-
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'project.urls'

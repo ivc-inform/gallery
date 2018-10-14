@@ -14,4 +14,4 @@ class AlbumAdmin(ModelAdmin):
 
 
 admin.site.register(Album, AlbumAdmin)
-admin.site.register(Photo)
+# admin.site.register(Photo)
