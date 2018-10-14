@@ -1,13 +1,10 @@
-from django.urls import path
-from django.views.generic import TemplateView, ListView, DetailView
+from django.urls import re_path
 
-from items.models.album import Album
-from items.models.photos import Photo
+from items.views import IndexView, AlbumListView, AlbumDetailView, PhotosDetailView
 
-# extra_context={'item_list': lambda: Album.objects.all()}),
 urlpatterns = [
-    # path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    # path('items/<int:pk>/', DetailView.as_view(template_name='items_detail.html', queryset=Album.objects.all()), name='album_detail'),
-    # path('items/', ListView.as_view(template_name='items_list.html', queryset=Album.objects.all(), allow_empty=True), name='item_list'),
-    # path('photos/<int:pk>/', DetailView.as_view(template_name='photos_detail.html', queryset=Photo.objects.all()), name='photo_detail')
+    re_path('^$', IndexView.as_view(), name='index'),
+    re_path(r'^items/$', AlbumListView.as_view(), name='item_list'),
+    re_path(r'^items/(?P<object_id>\d+)/$', AlbumDetailView.as_view(), name='item_detail'),
+    re_path(r'^photos/(?P<object_id>\d+)/$', PhotosDetailView.as_view(), name='photo_detail')
 ]
