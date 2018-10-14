@@ -160,12 +160,8 @@ LOGGING = {
 
 ROOT_URLCONF = 'project.urls'
 
-ROOT_URL = '/'
+# ROOT_URL = '/'
+ROOT_URL = '/gallery/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-ADMIN_MEDIA_PREFIX = '/media/admin/'
 MEDIA_URL = ROOT_URL + 'media/'
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    'gallery.context_processors.root_url_processor',
-    'django.core.context_processors.auth',
-]

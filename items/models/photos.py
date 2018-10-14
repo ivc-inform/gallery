@@ -1,9 +1,8 @@
 import logging
 
 from django.db.models import ForeignKey, CASCADE, CharField, Model
-from django.db.models.fields.files import ImageField
 
-from items import permalink
+from items.fields import ThumbnailImageField
 from items.models.album import Album
 
 logger = logging.getLogger(__name__)
@@ -12,7 +11,7 @@ logger = logging.getLogger(__name__)
 class Photo(Model):
     album = ForeignKey(Album, on_delete=CASCADE)
     title = CharField(max_length=250)
-    image = ImageField(upload_to='photos')
+    image = ThumbnailImageField(upload_to='photos%Y%m%d%H%M%S')
 
     class Meta:
         verbose_name = 'Фотография'
