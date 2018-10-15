@@ -4,15 +4,15 @@
 
 {% block content %}
 
-    <p><a href="{% url index %}">&laquo; Back to main page</a></p>
+    <p><a href="{% url 'index' %}">&laquo; На главную страницу</a></p>
 
     <h2>Альбомы</h2>
     {% if object_list %}
         <table>
             <tr>
-                <th>Name</th>
-                <th>Sample Thumb</th>
-                <th>Description</th>
+                <th>Наименование</th>
+                <th>Одна из...</th>
+                <th>Описание</th>
             </tr>
             {% for item in object_list %}
                 <tr>
