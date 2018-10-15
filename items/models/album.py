@@ -22,4 +22,4 @@ class Album(Model):
 
     @permalink
     def get_absolute_url(self):
-        return ('item_detail', None, dict(id=self.id))
+        return ('item_detail', None, dict(pk=self.id))

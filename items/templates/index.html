@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Это эксперемент{% endblock %}
 
 {% block content %}
 
-    <h2>Welcome to the Gallery!</h2>
-    <p>Here you'll find pictures of various items. Below are some highlighted items; use the link at the bottom to see the full listing.</p>
-    <h3>Витрина</h3>
+    <h2>Добро пожаловать!</h2>
+    <p>Здесь представленны только некоторые из нних.</p>
+    <h3>Вот они</h3>
     <table>
         <tr>
             {% for item in item_list|slice:":5" %}
@@ -22,6 +22,6 @@
             {% endfor %}
         </tr>
     </table>
-    <p><a href="{% url 'item_list' %}">View the full list &raquo;</a></p>
+    <p><a href="{% url 'item_list' %}">Все альбомы ...&raquo;</a></p>
 
 {% endblock %}
