@@ -26,4 +26,4 @@ class Photo(Model):
 
     @permalink
     def get_absolute_url(self):
-        return ('photo_detail', None, dict(object_id=self.id))
+        return ('photo_detail', None, dict(id=self.id))

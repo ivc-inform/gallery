@@ -26,7 +26,9 @@
                             (No photos currently uploaded)
                         {% endif %}
                     </td>
-                    <td>{{ item.description }}</td>
+                    {% if item.description %}
+                        <td>{{ item.description }}</td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </table>

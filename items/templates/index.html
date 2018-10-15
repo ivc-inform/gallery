@@ -9,7 +9,7 @@
     <h3>Витрина</h3>
     <table>
         <tr>
-            {% for item in item_list|slice:":3" %}
+            {% for item in item_list|slice:":5" %}
                 <td>
                     <a href="{{ item.get_absolute_url }}"><b>{{ item.name }}</b><br/>
                         {% if item.photo_set.count %}
