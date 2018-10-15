@@ -5,6 +5,6 @@ from items.views import IndexView, AlbumListView, AlbumDetailView, PhotosDetailV
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('items/', AlbumListView.as_view(), name='item_list'),
-    re_path(r'^items/(?P<pk>\d+)/$', AlbumDetailView.as_view(), name='item_detail'),
-    re_path(r'^photos/(?P<pk>\d+)/$', PhotosDetailView.as_view(), name='photo_detail')
+    path('items/<int:pk>/', AlbumDetailView.as_view(), name='item_detail'),
+    path(r'photos/<int:pk>/', PhotosDetailView.as_view(), name='photo_detail')
 ]

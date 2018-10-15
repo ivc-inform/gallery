@@ -19,6 +19,7 @@ class AlbumListView(ListView):
 
 
 class AlbumDetailView(DetailView):
+
     model = Album
     template_name = 'items_detail.html'
 

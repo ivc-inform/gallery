@@ -4,17 +4,17 @@
 
 {% block content %}
 
-    <p><a href="{% url item_list %}">&laquo; Back to full listing</a></p>
+    <p><a href="{% url 'item_list' %}">&laquo; Список альбомов</a></p>
 
     <h2>{{ object.name }}</h2>
     <p>{{ object.description }}</p>
 
-    <h3>Photos</h3>
+    <h3>Фотки ...</h3>
     <table>
         <tr>
-            <th>Title</th>
-            <th>Thumbnail</th>
-            <th>Caption</th>
+            <th>Заглавие</th>
+            <th>Картинка</th>
+            <th>Подпись</th>
         </tr>
         {% for photo in object.photo_set.all %}
             <tr>
@@ -24,7 +24,9 @@
                         <img src="{{ photo.image.thumb_url }}"/>
                     </a>
                 </td>
-                <td>{{ photo.caption }}</td>
+                {% if photo.caption %}
+                    <td>{{ photo.caption }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
     </table>
